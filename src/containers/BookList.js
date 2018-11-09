@@ -3,6 +3,8 @@ import { Book } from '../components/Book';
 import { connect } from 'react-redux';
 import { createBook, removeBook, getBooks } from '../actions/index';
 
+import '../css/BookList.css';
+
 class BookList extends React.Component {
 
   render() {

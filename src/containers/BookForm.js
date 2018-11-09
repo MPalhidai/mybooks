@@ -1,7 +1,5 @@
 import React from 'react';
-
-// simple form for now
-// needs to handle submit
+import '../css/BookForm.css';
 
 const categories = ['Action','Biography','History','Horror','Kids','Learning','Sci-Fi'];
 

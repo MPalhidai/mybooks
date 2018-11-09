@@ -1,0 +1,28 @@
+.BookList {
+  position: absolute;
+  left: 50%;
+  margin-left: -300px;
+  top: 25%;
+  width: 600px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  padding: 0.25rem 0.5rem;
+}
+
+th {
+  padding: 0.5rem;
+}
