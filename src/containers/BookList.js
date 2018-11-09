@@ -20,7 +20,7 @@ class BookList extends React.Component {
               title = { title }
               category = { category }
             />
-          ))};
+          ))}
         </table>
       </div>
     );
@@ -29,7 +29,7 @@ class BookList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    inventory: state.inventory
+    inventory: state.books
   }
 };
 
