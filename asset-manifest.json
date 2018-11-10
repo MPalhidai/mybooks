@@ -1,0 +1,13 @@
+{
+  "main.css": "/bookstore/static/css/main.4f894a8a.chunk.css",
+  "main.js": "/bookstore/static/js/main.960cc103.chunk.js",
+  "main.js.map": "/bookstore/static/js/main.960cc103.chunk.js.map",
+  "static/js/1.f56344e4.chunk.js": "/bookstore/static/js/1.f56344e4.chunk.js",
+  "static/js/1.f56344e4.chunk.js.map": "/bookstore/static/js/1.f56344e4.chunk.js.map",
+  "runtime~main.js": "/bookstore/static/js/runtime~main.78b710cb.js",
+  "runtime~main.js.map": "/bookstore/static/js/runtime~main.78b710cb.js.map",
+  "static/css/main.4f894a8a.chunk.css.map": "/bookstore/static/css/main.4f894a8a.chunk.css.map",
+  "index.html": "/bookstore/index.html",
+  "precache-manifest.c2511a7d2f1e9f8933f5d245ec0b97e2.js": "/bookstore/precache-manifest.c2511a7d2f1e9f8933f5d245ec0b97e2.js",
+  "service-worker.js": "/bookstore/service-worker.js"
+}
