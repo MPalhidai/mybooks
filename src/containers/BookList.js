@@ -7,6 +7,15 @@ import '../css/BookList.css';
 
 class BookList extends React.Component {
 
+  // constructor(props) {
+  //   super(props);
+  //   this.handleRemoveBook = this.handleRemoveBook.bind(this);
+  // }
+
+  handleRemoveBook = id => {
+    this.props.onRemoveBook(id);
+  };
+
   render() {
     return(
       <div className = 'BookList'>
@@ -15,6 +24,7 @@ class BookList extends React.Component {
             <th className = 'id'>Id</th>
             <th className = 'title'>Title</th>
             <th className = 'category'>Category</th>
+            <th className = 'remove'>Remove</th>
           </tr>
           { this.props.inventory.map( (book, idx) => (
             <Book
@@ -22,6 +32,7 @@ class BookList extends React.Component {
               id = { book.id }
               title = { book.title }
               category = { book.category }
+              removeBtn = { this.handleRemoveBook }
             />
           ))}
         </table>
@@ -36,9 +47,9 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    removeBookBtn: bookId => {
+    onRemoveBook: bookId => {
       dispatch(removeBook(bookId));
     }
   }
