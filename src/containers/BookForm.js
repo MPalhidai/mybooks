@@ -28,8 +28,9 @@ class BookForm extends React.Component {
     });
   }
 
-  handleSubmit = () => {
-    this.props.submitNewBook(this.state)
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.submitNewBook(this.state);
     this.setState({
       id: (this.state.id + 1), // change this to redux store state and not this component state
       title: '',
@@ -39,7 +40,7 @@ class BookForm extends React.Component {
 
   render() {
     return (
-      <div className = 'BookForm'>
+      <form className = 'BookForm'>
         <input className = 'bookFormInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Title'/>
         <select className = 'bookFromSelector' name = 'categories' onChange = { this.handleOptions } value = { this.state.category }>
           { categories.map( category => (
@@ -47,7 +48,7 @@ class BookForm extends React.Component {
           ))}
         </select>
         <button className = 'bookFormBtn' onClick = { this.handleSubmit }>Add Book</button>
-      </div>
+      </form>
     );
   }
 }
