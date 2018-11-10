@@ -13,6 +13,7 @@ class BookForm extends React.Component {
     this.state = { id: 1, title: '', category: 'Action' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOptions = this.handleOptions.bind(this);
   }
 
   handleChange = event => {
@@ -21,10 +22,16 @@ class BookForm extends React.Component {
     });
   }
 
+  handleOptions = event => {
+    this.setState({
+      category: event.target.value
+    });
+  }
+
   handleSubmit = () => {
     this.props.submitNewBook(this.state)
     this.setState({
-      id: (this.state.id + 1),
+      id: (this.state.id + 1), // change this to redux store state and not this component state
       title: '',
       category: 'Action'
     });
@@ -32,15 +39,15 @@ class BookForm extends React.Component {
 
   render() {
     return (
-      <form className = 'BookForm'>
+      <div className = 'BookForm'>
         <input className = 'bookFormInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Title'/>
-        <select className = 'bookFromSelector' name = 'categories'>
+        <select className = 'bookFromSelector' name = 'categories' onChange = { this.handleOptions } value = { this.state.category }>
           { categories.map( category => (
             <option value = { category }>{ category }</option>
           ))}
         </select>
         <button className = 'bookFormBtn' onClick = { this.handleSubmit }>Add Book</button>
-      </form>
+      </div>
     );
   }
 }
