@@ -1,7 +1,7 @@
 import React from 'react';
 import { Book } from '../components/Book';
 import { connect } from 'react-redux';
-import { createBook, removeBook, getBooks } from '../actions/index';
+import { removeBook } from '../actions/index';
 
 import '../css/BookList.css';
 
@@ -16,11 +16,12 @@ class BookList extends React.Component {
             <th className = 'title'>Title</th>
             <th className = 'category'>Category</th>
           </tr>
-          { this.props.inventory.map(({ id, title, category }) => (
+          { this.props.inventory.map( (book, idx) => (
             <Book
-              id = { id }
-              title = { title }
-              category = { category }
+              key = { idx }
+              id = { book.id }
+              title = { book.title }
+              category = { book.category }
             />
           ))}
         </table>
@@ -35,10 +36,12 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = {
-  createBook,
-  removeBook,
-  getBooks
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeBookBtn: bookId => {
+      dispatch(removeBook(bookId));
+    }
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

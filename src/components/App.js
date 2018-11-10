@@ -1,6 +1,6 @@
 import React from 'react';
 import BookList from '../containers/BookList';
-import { BookForm } from '../containers/BookForm';
+import BookForm from '../containers/BookForm';
 
 export class App extends React.Component {
   render() {

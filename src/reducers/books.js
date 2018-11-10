@@ -14,7 +14,7 @@ export const bookReducer = ( state = initialState, action ) => {
     case CREATE_BOOK:
       return {
         ...state,
-        books: [ action.createBook, ...state.books ]
+        books: [ action.book, ...state.books ]
        }
     case REMOVE_BOOK:
       return {
