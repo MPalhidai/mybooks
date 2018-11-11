@@ -1,5 +1,6 @@
 import React from 'react';
 import { Book } from '../components/Book';
+import { CategoryFilter } from '../components/CategoryFilter'
 import { connect } from 'react-redux';
 import { removeBook } from '../actions/index';
 
@@ -19,6 +20,7 @@ class BookList extends React.Component {
   render() {
     return(
       <div className = 'BookList'>
+        <CategoryFilter />
         <table className = 'table'>
           <tr className = 'tableHeader'>
             <th className = 'id'>Id</th>
