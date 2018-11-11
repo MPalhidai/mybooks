@@ -1,5 +1,5 @@
 // define all redux actions
-import { CREATE_BOOK, REMOVE_BOOK, GET_BOOKS } from './constants';
+import { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER, GET_BOOKS,  } from './constants';
 
 export const createBook = book => {
   return {
@@ -12,6 +12,13 @@ export const removeBook = id => {
   return {
     type: REMOVE_BOOK,
     id: id
+  }
+}
+
+export const changeFilter = filter => {
+  return {
+    type: CHANGE_FILTER,
+    filter: filter
   }
 }
 
