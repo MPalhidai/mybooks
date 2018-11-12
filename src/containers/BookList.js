@@ -2,25 +2,24 @@ import React from 'react';
 import { Book } from '../components/Book';
 import { CategoryFilter } from '../components/CategoryFilter'
 import { connect } from 'react-redux';
-import { removeBook } from '../actions/index';
+import { removeBook, changeFilter } from '../actions/index';
 
 import '../css/BookList.css';
 
 class BookList extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.handleRemoveBook = this.handleRemoveBook.bind(this);
-  // }
-
   handleRemoveBook = id => {
     this.props.onRemoveBook(id);
+  };
+
+  handleFilterChange = filter => {
+    this.props.onFilterChange(filter);
   };
 
   render() {
     return(
       <div className = 'BookList'>
-        <CategoryFilter />
+        <CategoryFilter  selector = { this.handleFilterChange }/>
         <table className = 'table'>
           <tr className = 'tableHeader'>
             <th className = 'id'>Id</th>
@@ -28,7 +27,7 @@ class BookList extends React.Component {
             <th className = 'category'>Category</th>
             <th className = 'remove'>Remove</th>
           </tr>
-          { this.props.inventory.map( (book, idx) => (
+          { this.props.inventory.filter( book => this.props.categories.includes(book.category)).map( (book, idx) => (
             <Book
               key = { idx }
               id = { book.id }
@@ -45,7 +44,8 @@ class BookList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    inventory: state.books
+    inventory: state.inventory.books,
+    categories: state.categories.filters
   }
 };
 
@@ -53,6 +53,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onRemoveBook: bookId => {
       dispatch(removeBook(bookId));
+    },
+    onFilterChange: filterCategory => {
+      dispatch(changeFilter(filterCategory));
     }
   }
 }

@@ -1,10 +1,11 @@
-// combine all reducers
-
-// import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import { bookReducer } from './books';
+import { filterReducer } from './filter';
 
-// export const Reducers = combineReducers({
-//   inventory: bookReducer,
-// });
+export const rootReducer = combineReducers({
+  inventory: bookReducer,
+  categories: filterReducer
+});
 
-export const Reducers = bookReducer;
+
+// export const rootReducer = bookReducer;

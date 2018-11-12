@@ -9,7 +9,7 @@ class BookForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { id: 1, title: '', category: 'All' };
+    this.state = { id: 1, title: '', category: 'Action' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOptions = this.handleOptions.bind(this);
@@ -35,7 +35,8 @@ class BookForm extends React.Component {
     this.props.submitNewBook(this.state);
     this.setState({
       id: (this.state.id + 1), // change this to redux store state and not this component state
-      title: ''
+      title: '',
+      category: 'Action'
     });
   }
 

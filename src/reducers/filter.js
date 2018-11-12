@@ -3,13 +3,13 @@ import { initialState, CHANGE_FILTER } from '../actions/constants';
 export const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_FILTER:
-      if (action.filter === 'All') { // possible way
+      if (action.filter === 'All') {
         return {
-          filter: state.filters
+          filters: [...initialState.filters]
         }
       } else {
         return {
-          filter: [action.filter]
+          filters: [action.filter]
         }
       }
     default:
