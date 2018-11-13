@@ -1,11 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=RobotoSlab:400,700');
 
 .bookCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #ffffff;
   margin-bottom: 15px;
   padding: 30px;
+}
+
+.bookCardLeft {
+
+}
+
+.bookCardMiddle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+}
+
+.bookCardRight {
+  border-left: 2px solid #e8e8e8;
+  padding: 0 50px;
 }
 
 .bookCategory {
@@ -77,4 +96,78 @@
 .bookLink:nth-child(3) {
   padding-left: 15px;
   border-left: 2px solid #e8e8e8;
+}
+
+.bookProgressBar {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  border: 5px solid #e8e8e8;
+  border-radius: 100%;
+  background: #ffffff;
+}
+
+.bookProgressNumber {
+  font-family: Montserrat, sans-serif;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-bottom: 1px;
+}
+
+.bookProgressComplete {
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.bookChapterHeader {
+  opacity: 0.5;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-bottom: 7px;
+}
+
+.bookChapter {
+  font-family: RobotoSlab, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+  margin-bottom: 23px;
+}
+
+.progressBtn {
+  width: 184px;
+  height: 33px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
 }
