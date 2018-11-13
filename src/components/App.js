@@ -14,9 +14,11 @@ export class App extends React.Component {
     return (
       <div className = 'App'>
         <div className = 'header'>
-          <span className = 'logo'>Bookstore CMS</span>
-          <span className = 'headerLink'>Books</span>
-          <span className = 'headerLink'>Categories</span>
+          <div className = 'headerLinks'>
+            <span className = 'logo'>Bookstore CMS</span>
+            <span className = 'headerLink'>Books</span>
+            <span className = 'headerLink'>Categories</span>
+          </div>
           <div className = 'userCircle'>
             <FontAwesomeIcon icon = 'user' />
           </div>
