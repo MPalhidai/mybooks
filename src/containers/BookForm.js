@@ -30,7 +30,7 @@ class BookForm extends React.Component {
 
   handleSubmit = event => {
     // prevent an empty title
-    // prevent reuse of id
+    // prevent reuse of id and duplicates
     event.preventDefault();
     this.props.submitNewBook(this.state);
     this.setState({
@@ -42,14 +42,15 @@ class BookForm extends React.Component {
 
   render() {
     return (
-      <form className = 'BookForm'>
-        <input className = 'bookFormInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Title'/>
-        <select className = 'bookFormSelector' name = 'categories' onChange = { this.handleOptions } value = { this.state.category }>
+      <form className = 'bookForm'>
+        <p className = 'formHeader'>ADD NEW BOOK</p>
+        <input className = 'formInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Title'/>
+        <select className = 'formSelector' name = 'categories' onChange = { this.handleOptions } value = { this.state.category }>
           { initialState.filters.map( category => (
             <option value = { category }>{ category }</option>
           ))}
         </select>
-        <button className = 'bookFormBtn' onClick = { this.handleSubmit }>Add Book</button>
+        <button className = 'formBtn' onClick = { this.handleSubmit }>Add Book</button>
       </form>
     );
   }

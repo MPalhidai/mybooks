@@ -1,9 +1,81 @@
-.removeColumn {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=RobotoSlab');
+
+.bookCard {
+  width: 100%;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  padding: 30px;
 }
 
-.removeBtn {
-  background-color: #ff5e52;
-  border: 0;
-  border-radius: 25%;
+.bookCategory {
+  width: 49px;
+  height: 18px;
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-bottom: 4px;
+}
+
+.bookTitle {
+  width: 197px;
+  height: 29px;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+  margin-bottom: 0px;
+}
+
+.bookAuthor {
+  width: 107px;
+  height: 19px;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  margin-bottom: 20px;
+}
+
+.bookLink {
+  width: 73px;
+  height: 19px;
+  font-family: RobotoSlab, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  margin-bottom: 0px;
+}
+
+.bookLink:nth-child(1) {
+  padding-right: 15px;
+  border-right: 2px solid #e8e8e8;
+}
+
+.bookLink:nth-child(2) {
+  margin: 0 15px;
+}
+
+.bookLink:nth-child(3) {
+  padding-left: 15px;
+  border-left: 2px solid #e8e8e8;
 }

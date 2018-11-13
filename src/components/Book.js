@@ -4,16 +4,18 @@ import '../css/Book.css';
 export class Book extends React.Component {
   render() {
     return (
-      <tr className = 'tableRow' key = { this.props.key }>
-        <td>{ this.props.id }</td>
-        <td>{ this.props.title }</td>
-        <td>{ this.props.category }</td>
-        <td className = 'removeColumn'>
-          <button onClick = { () => this.props.removeBtn(this.props.id) } className = 'removeBtn'>
-            X
-          </button>
-        </td>
-      </tr>
+      <div className = 'bookCard' key = { this.props.key } id = { this.props.id }>
+        <p className = 'bookCategory'>{ this.props.category }</p>
+        <p className = 'bookTitle'>{ this.props.title }</p>
+        <p className = 'bookAuthor'>Author</p>
+        <p className = 'bookLinks'>
+          <span className = 'bookLink'>Comments</span>
+          <span className = 'bookLink' onClick = { () => this.props.removeBtn(this.props.id) }>
+            Remove
+          </span>
+          <span className = 'bookLink'>Edit</span>
+        </p>
+      </div>
     );
   }
 }

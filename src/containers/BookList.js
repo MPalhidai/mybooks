@@ -20,23 +20,15 @@ class BookList extends React.Component {
     return(
       <div className = 'BookList'>
         <CategoryFilter  selector = { this.handleFilterChange }/>
-        <table className = 'table'>
-          <tr className = 'tableHeader'>
-            <th className = 'id'>Id</th>
-            <th className = 'title'>Title</th>
-            <th className = 'category'>Category</th>
-            <th className = 'remove'>Remove</th>
-          </tr>
-          { this.props.inventory.filter( book => this.props.categories.includes(book.category)).map( (book, idx) => (
-            <Book
-              key = { idx }
-              id = { book.id }
-              title = { book.title }
-              category = { book.category }
-              removeBtn = { this.handleRemoveBook }
-            />
-          ))}
-        </table>
+        { this.props.inventory.filter( book => this.props.categories.includes(book.category)).map( (book, idx) => (
+          <Book
+            key = { idx }
+            id = { book.id }
+            title = { book.title }
+            category = { book.category }
+            removeBtn = { this.handleRemoveBook }
+          />
+        ))}
       </div>
     );
   }
