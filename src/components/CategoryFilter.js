@@ -1,5 +1,6 @@
 import React from 'react';
 import { initialState } from '../actions/constants';
+import '../css/CategoryFilter.css';
 
 export class CategoryFilter extends React.Component {
 
@@ -12,8 +13,8 @@ export class CategoryFilter extends React.Component {
     const filters = ['All', ...initialState.filters];
 
     return (
-      <div>
-        <span className = 'filterTag'>Filter: </span>
+      <div className = 'filter'>
+        <span className = 'filterTag'>Filter:</span>
         <select className = 'filterSelector' name = 'filters' onChange = { this.handleChange }>
           { filters.map( category => (
             <option value = { category }>{ category }</option>
