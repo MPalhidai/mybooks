@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=RobotoSlab:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 
 .bookCard {
   display: flex;
@@ -31,7 +31,7 @@
   width: 49px;
   height: 18px;
   opacity: 0.5;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
@@ -45,7 +45,7 @@
 .bookTitle {
   width: 197px;
   height: 29px;
-  font-family: RobotoSlab, sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 22px;
   font-weight: bold;
   font-style: normal;
@@ -59,7 +59,7 @@
 .bookAuthor {
   width: 107px;
   height: 19px;
-  font-family: RobotoSlab, sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 14px;
   font-weight: 300;
   font-style: normal;
@@ -73,7 +73,7 @@
 .bookLink {
   width: 73px;
   height: 19px;
-  font-family: RobotoSlab, sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 14px;
   font-weight: 300;
   font-style: normal;
@@ -108,7 +108,7 @@
 }
 
 .bookProgressNumber {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 32px;
   font-weight: normal;
   font-style: normal;
@@ -121,7 +121,7 @@
 
 .bookProgressComplete {
   opacity: 0.5;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -133,7 +133,7 @@
 
 .bookChapterHeader {
   opacity: 0.5;
-  font-family: RobotoSlab, sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 13px;
   font-weight: 300;
   font-style: normal;
@@ -145,7 +145,7 @@
 }
 
 .bookChapter {
-  font-family: RobotoSlab, sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 16px;
   font-weight: 300;
   font-style: normal;
@@ -161,7 +161,7 @@
   height: 33px;
   border-radius: 3px;
   background-color: #0290ff;
-  font-family: RobotoSlab, sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 13px;
   font-weight: 300;
   font-style: normal;

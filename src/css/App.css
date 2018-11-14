@@ -24,7 +24,7 @@ p {
 
 .headerLink {
   height: 16px;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
@@ -60,7 +60,7 @@ p {
 .logo {
   width: 240px;
   height: 37px;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: bold;
   font-style: normal;

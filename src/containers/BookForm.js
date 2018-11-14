@@ -47,8 +47,8 @@ class BookForm extends React.Component {
         <div className = 'flexDiv'>
           <input className = 'formInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Book title'/>
           <select className = 'formSelector' name = 'categories' onChange = { this.handleOptions } value = { this.state.category }>
-            { initialState.filters.map( category => (
-              <option value = { category }>{ category }</option>
+            { initialState.filters.map( (category, idx) => (
+              <option value = { category } key = { idx }>{ category }</option>
             ))}
           </select>
           <button className = 'formBtn' onClick = { this.handleSubmit }>

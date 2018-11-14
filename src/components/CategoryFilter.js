@@ -16,8 +16,8 @@ export class CategoryFilter extends React.Component {
       <div className = 'filter'>
         <span className = 'filterTag'>Filter:</span>
         <select className = 'filterSelector' name = 'filters' onChange = { this.handleChange }>
-          { filters.map( category => (
-            <option value = { category }>{ category }</option>
+          { filters.map( (category, idx) => (
+            <option value = { category } key = { idx }>{ category }</option>
           ))}
         </select>
       </div>

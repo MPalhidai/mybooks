@@ -4,7 +4,7 @@ import '../css/Book.css';
 export class Book extends React.Component {
   render() {
     return (
-      <div className = 'bookCard' key = { this.props.key } id = { this.props.id }>
+      <div className = 'bookCard' id = { this.props.id }>
         <div className = 'bookCardLeft'>
           <p className = 'bookCategory'>{ this.props.category }</p>
           <p className = 'bookTitle'>{ this.props.title }</p>
@@ -19,7 +19,7 @@ export class Book extends React.Component {
         </div>
         <div className = 'bookCardMiddle'>
           <div className = 'bookProgressBar'>
-            
+
           </div>
           <div className = 'bookCardMiddleRight'>
             <p className = 'bookProgressNumber'>0%</p>
