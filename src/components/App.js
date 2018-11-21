@@ -1,28 +1,14 @@
 import React from 'react';
+import '../css/App.css';
 import BookList from '../containers/BookList';
 import BookForm from '../containers/BookForm';
-import '../css/App.css';
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faUser)
+import { Nav } from './Nav';
 
 export class App extends React.Component {
   render() {
     return (
       <div className = 'App'>
-        <div className = 'header'>
-          <div className = 'headerLinks'>
-            <span className = 'logo'>Bookstore CMS</span>
-            <span className = 'headerLink'>Books</span>
-            <span className = 'headerLink'>Categories</span>
-          </div>
-          <div className = 'userCircle'>
-            <FontAwesomeIcon icon = 'user' />
-          </div>
-        </div>
+        <Nav />
         <div className = 'container'>
           <BookList />
           <BookForm />

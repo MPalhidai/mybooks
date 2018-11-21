@@ -1,6 +1,7 @@
 import React from 'react';
-import { initialState } from '../actions/constants';
 import '../css/CategoryFilter.css';
+import { initialState } from '../actions/constants';
+
 
 export class CategoryFilter extends React.Component {
 

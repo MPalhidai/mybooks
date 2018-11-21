@@ -1,10 +1,9 @@
 import React from 'react';
+import '../css/BookList.css';
 import { Book } from '../components/Book';
 import { CategoryFilter } from '../components/CategoryFilter'
 import { connect } from 'react-redux';
 import { removeBook, changeFilter } from '../actions/index';
-
-import '../css/BookList.css';
 
 class BookList extends React.Component {
 
