@@ -1,8 +1,9 @@
 import React from 'react';
 import '../css/App.css';
-import BookList from '../containers/BookList';
+
 import BookForm from '../containers/BookForm';
 import { Nav } from './Nav';
+import { Routes } from './Routes';
 
 export class App extends React.Component {
   render() {
@@ -10,7 +11,7 @@ export class App extends React.Component {
       <div className = 'App'>
         <Nav />
         <div className = 'container'>
-          <BookList />
+          <Routes />
           <BookForm />
         </div>
       </div>
