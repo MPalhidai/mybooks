@@ -1,7 +1,5 @@
 import React from 'react';
 import '../css/App.css';
-
-import BookForm from '../containers/BookForm';
 import { Nav } from './Nav';
 import { Routes } from './Routes';
 
@@ -12,7 +10,6 @@ export class App extends React.Component {
         <Nav />
         <div className = 'container'>
           <Routes />
-          <BookForm />
         </div>
       </div>
     );
