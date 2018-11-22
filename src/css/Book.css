@@ -54,6 +54,7 @@
   letter-spacing: -0.2px;
   color: #121212;
   margin-bottom: 0px;
+  text-decoration: none;
 }
 
 .bookAuthor {
@@ -82,6 +83,11 @@
   letter-spacing: normal;
   color: #4386bf;
   margin-bottom: 0px;
+  text-decoration: none;
+}
+
+.bookLink:hover {
+  text-decoration: underline;
 }
 
 .bookLink:nth-child(1) {

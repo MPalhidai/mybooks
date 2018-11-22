@@ -6,6 +6,3 @@ export const rootReducer = combineReducers({
   inventory: bookReducer,
   categories: filterReducer
 });
-
-
-// export const rootReducer = bookReducer;

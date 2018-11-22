@@ -1,11 +1,10 @@
-.bookForm {
+.Form {
   align-items: center;
   border-top: solid 2px #e8e8e8;
   margin-bottom: 50px;
 }
 
 .formHeader {
-  width: 174px;
   height: 24px;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -24,8 +23,24 @@
   justify-content: space-between;
 }
 
-.formInput {
+.bookFormInput {
   width: 50%;
+  padding: 15px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.1px;
+  color: gray;
+}
+
+.commentFormInput {
+  width: 35%;
   padding: 15px;
   border-radius: 4px;
   border: solid 1px #e8e8e8;

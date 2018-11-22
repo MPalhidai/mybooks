@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/BookForm.css';
+import '../css/Form.css';
 
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
@@ -42,10 +42,10 @@ class BookForm extends React.Component {
 
   render() {
     return (
-      <form className = 'bookForm'>
+      <form className = 'Form'>
         <p className = 'formHeader'>ADD NEW BOOK</p>
         <div className = 'flexDiv'>
-          <input className = 'formInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Book title'/>
+          <input className = 'bookFormInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Book title'/>
           <select className = 'formSelector' name = 'categories' onChange = { this.handleOptions } value = { this.state.category }>
             { initialState.filters.map( (category, idx) => (
               <option value = { category } key = { idx }>{ category }</option>

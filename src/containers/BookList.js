@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/BookList.css';
 import { Book } from '../components/Book';
-import { CategoryFilter } from '../components/CategoryFilter'
+import { CategoryFilter } from '../components/CategoryFilter';
 import { connect } from 'react-redux';
 import { removeBook, changeFilter } from '../actions/index';
 

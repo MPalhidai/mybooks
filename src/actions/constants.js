@@ -1,7 +1,8 @@
 export const CREATE_BOOK = 'CREATE_BOOK';
 export const REMOVE_BOOK = 'REMOVE_BOOK';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
-export const GET_BOOKS = 'GET_BOOKS';
+export const GET_BOOK = 'GET_BOOK';
+export const CREATE_COMMENT = 'CREATE_COMMENT';
 
 export const initialState = {
   books: [

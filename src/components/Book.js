@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Book.css';
+import { Link } from 'react-router-dom';
 
 export class Book extends React.Component {
   render() {
@@ -10,7 +11,7 @@ export class Book extends React.Component {
           <p className = 'bookTitle'>{ this.props.title }</p>
           <p className = 'bookAuthor'>Author</p>
           <p className = 'bookLinks'>
-            <span className = 'bookLink'>Comments</span>
+            <Link to = { `/books/${ this.props.id }` } className = 'bookLink'>Comments</Link>
             <span className = 'bookLink' onClick = { () => this.props.removeBtn(this.props.id) }>
               Remove
             </span>
