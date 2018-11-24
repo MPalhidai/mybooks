@@ -3,12 +3,21 @@ import '../css/BookList.css';
 import { Book } from '../components/Book';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { connect } from 'react-redux';
-import { removeBook, changeFilter } from '../actions/index';
+import { removeBook, changeFilter, editBook } from '../actions/index';
 
 class BookList extends React.Component {
 
   handleRemoveBook = id => {
-    this.props.onRemoveBook(id);
+    if(window.confirm('Are you sure you want to remove this book?')){
+      this.props.onRemoveBook(id);
+    }
+  };
+
+  handleEditProgress = id => {
+    let value = prompt('What page are you on now?');
+    if(value) {
+      this.props.onEditProgress(id, value);
+    }
   };
 
   handleFilterChange = filter => {
@@ -25,7 +34,10 @@ class BookList extends React.Component {
             id = { book.id }
             title = { book.title }
             category = { book.category }
+            current_page = { book.current_page }
+            total_pages = { book.total_pages }
             removeBtn = { this.handleRemoveBook }
+            progressBtn = { this.handleEditProgress }
           />
         ))}
       </div>
@@ -47,6 +59,9 @@ const mapDispatchToProps = dispatch => {
     },
     onFilterChange: filterCategory => {
       dispatch(changeFilter(filterCategory));
+    },
+    onEditProgress: (id, value) => {
+      dispatch(editBook(id, value));
     }
   }
 }

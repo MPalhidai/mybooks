@@ -2,7 +2,8 @@ import {
   initialState,
   CREATE_BOOK,
   REMOVE_BOOK,
-  GET_BOOK
+  GET_BOOK,
+  EDIT_BOOK
 } from '../actions/constants';
 
 
@@ -19,6 +20,17 @@ export const bookReducer = ( state = initialState, action ) => {
     case GET_BOOK:
       return {
         books: state.books.filter( book => book.id === action.id )
+      }
+    case EDIT_BOOK:
+      const updatedBooks = state.books.map( book => {
+        if(book.id === action.id ){
+          book.current_page = action.current_page;
+        }
+        return book;
+      });
+
+      return {
+        books: updatedBooks
       }
     default:
       return state

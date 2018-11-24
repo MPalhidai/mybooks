@@ -23,14 +23,14 @@ export class Book extends React.Component {
 
           </div>
           <div className = 'bookCardMiddleRight'>
-            <p className = 'bookProgressNumber'>0%</p>
+            <p className = 'bookProgressNumber'>{ Math.floor(this.props.current_page / this.props.total_pages * 100) }%</p>
             <p className = 'bookProgressComplete'>Completed</p>
           </div>
         </div>
         <div className = 'bookCardRight'>
           <p className = 'bookChapterHeader'>CURRENT CHAPTER</p>
           <p className = 'bookChapter'>Introduction</p>
-          <button className = 'progressBtn' >
+          <button className = 'progressBtn' onClick = { () => this.props.progressBtn(this.props.id) }>
             Update Progress
           </button>
         </div>

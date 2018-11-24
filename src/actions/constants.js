@@ -3,12 +3,18 @@ export const REMOVE_BOOK = 'REMOVE_BOOK';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const GET_BOOK = 'GET_BOOK';
 export const CREATE_COMMENT = 'CREATE_COMMENT';
+export const EDIT_BOOK = 'EDIT_BOOK';
 
 export const initialState = {
   books: [
-    {id: 1, title: "ABC's", category: 'Kids'},
-    {id: 2, title: "Birds", category: 'Learning'},
-    {id: 3, title: "USA", category: 'History'}
+    {
+      id: 1,
+      title: "ABC's",
+      category: 'Kids',
+      author: 'Michael P.',
+      current_page: 30,
+      total_pages: 1234
+    }
   ],
   filters: [
     'Action',

@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 class BookView extends React.Component {
   render() {
 
-
     let book = this.props.inventory.filter( book => book.id === Number(this.props.id))[0];
 
     return(
@@ -32,7 +31,7 @@ class BookView extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { // shouldn't load the whole store, only this book and related info
   return {
     inventory: state.inventory.books,
     opinions: state.opinions.comments // currently showing all comments on all books
