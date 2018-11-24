@@ -19,7 +19,6 @@ export class Comment extends React.Component {
         <div className = 'commentCardBottom'>
           <p className = 'commentContent'>{ this.props.content }</p>
         </div>
-
       </div>
     );
   }

@@ -18,7 +18,7 @@ class BookView extends React.Component {
           category = { book.category }
         />
         <div className = 'CommentList'>
-          { this.props.opinions.map( (comment, idx) => (
+          { this.props.opinions.filter( comment => comment.book_id === book.id ).map( (comment, idx) => (
             <Comment
               key = { idx }
               id = { comment.id }
@@ -35,7 +35,7 @@ class BookView extends React.Component {
 const mapStateToProps = state => {
   return {
     inventory: state.inventory.books,
-    opinions: state.opinions.comments
+    opinions: state.opinions.comments // currently showing all comments on all books
   }
 };
 

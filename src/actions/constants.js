@@ -6,9 +6,9 @@ export const CREATE_COMMENT = 'CREATE_COMMENT';
 
 export const initialState = {
   books: [
-    {id: 1234, title: "ABC's", category: 'Kids'},
-    {id: 2345, title: "Birds", category: 'Learning'},
-    {id: 3456, title: "USA", category: 'History'}
+    {id: 1, title: "ABC's", category: 'Kids'},
+    {id: 2, title: "Birds", category: 'Learning'},
+    {id: 3, title: "USA", category: 'History'}
   ],
   filters: [
     'Action',
@@ -20,6 +20,6 @@ export const initialState = {
     'Sci-Fi'
   ],
   comments: [
-    {id: 1, rating: 77, content: 'This books is great!!!', book_id: 1234}
+    {id: 1, rating: 77, content: 'This books is great!!!', book_id: 1}
   ]
 }
