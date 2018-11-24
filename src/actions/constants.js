@@ -18,5 +18,8 @@ export const initialState = {
     'Kids',
     'Learning',
     'Sci-Fi'
+  ],
+  comments: [
+    {id: 1, rating: 77, content: 'This books is great!!!', book_id: 1234}
   ]
 }

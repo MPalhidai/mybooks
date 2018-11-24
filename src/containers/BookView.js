@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/BookView.css';
 import { Book } from '../components/Book';
+import { Comment } from '../components/Comment';
 import { connect } from 'react-redux';
 
 class BookView extends React.Component {
@@ -15,8 +16,17 @@ class BookView extends React.Component {
           id = { book.id }
           title = { book.title }
           category = { book.category }
-          removeBtn = { this.handleRemoveBook }
         />
+        <div className = 'CommentList'>
+          { this.props.opinions.map( (comment, idx) => (
+            <Comment
+              key = { idx }
+              id = { comment.id }
+              rating = { comment.rating }
+              content = { comment.content }
+            />
+          ))}
+        </div>
       </div>
     );
   }
@@ -24,7 +34,8 @@ class BookView extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    inventory: state.inventory.books
+    inventory: state.inventory.books,
+    opinions: state.opinions.comments
   }
 };
 
