@@ -33,8 +33,10 @@ class BookList extends React.Component {
             key = { idx }
             id = { book.id }
             title = { book.title }
+            author = { book.author }
             category = { book.category }
             current_page = { book.current_page }
+            current_chapter = { book.current_chapter }
             total_pages = { book.total_pages }
             removeBtn = { this.handleRemoveBook }
             progressBtn = { this.handleEditProgress }

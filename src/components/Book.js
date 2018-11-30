@@ -9,7 +9,7 @@ export class Book extends React.Component {
         <div className = 'bookCardLeft'>
           <p className = 'bookCategory'>{ this.props.category }</p>
           <p className = 'bookTitle'>{ this.props.title }</p>
-          <p className = 'bookAuthor'>Author</p>
+          <p className = 'bookAuthor'>{ this.props.author }</p>
           <p className = 'bookLinks'>
             <Link to = { `/books/${ this.props.id }` } className = 'bookLink'>Comments</Link>
             <span className = 'bookLink' onClick = { () => this.props.removeBtn(this.props.id) }>
@@ -29,7 +29,7 @@ export class Book extends React.Component {
         </div>
         <div className = 'bookCardRight'>
           <p className = 'bookChapterHeader'>CURRENT CHAPTER</p>
-          <p className = 'bookChapter'>Introduction</p>
+          <p className = 'bookChapter'>{ this.props.current_chapter }</p>
           <button className = 'progressBtn' onClick = { () => this.props.progressBtn(this.props.id) }>
             Update Progress
           </button>
