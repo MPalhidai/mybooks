@@ -15,7 +15,7 @@ export class Book extends React.Component {
             <span className = 'bookLink' onClick = { () => this.props.removeBtn(this.props.id) }>
               Remove
             </span>
-            <span className = 'bookLink'>Edit</span>
+            <Link to = { `/books/update/${ this.props.id }` } className = 'bookLink'>Edit</Link>
           </p>
         </div>
         <div className = 'bookCardMiddle'>

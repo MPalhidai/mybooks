@@ -9,7 +9,15 @@ class BookForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { id: 1, title: '', category: 'Action' };
+    this.state = {
+      id: 1,
+      title: '',
+      category: 'Action',
+      author: '',
+      total_pages: null,
+      current_page: null,
+      current_chapter: ''
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOptions = this.handleOptions.bind(this);
@@ -17,7 +25,7 @@ class BookForm extends React.Component {
 
   handleChange = event => {
     this.setState({
-      title: event.target.value
+      [event.target.name]: event.target.value
     });
   }
 
@@ -36,7 +44,11 @@ class BookForm extends React.Component {
     this.setState({
       id: (this.state.id + 1), // change this to redux store state and not this component state
       title: '',
-      category: 'Action'
+      category: 'Action',
+      author: '',
+      total_pages: null,
+      current_page: null,
+      current_chapter: ''
     });
   }
 
@@ -54,6 +66,12 @@ class BookForm extends React.Component {
           <button className = 'formBtn' onClick = { this.handleSubmit }>
             Add Book
           </button>
+        </div>
+        <div className = 'flexDiv'>
+          <input className = 'bookFormValue' type = 'text' name = 'author' value = { this.state.author } onChange = { this.handleChange } placeholder = 'Author'/>
+          <input className = 'bookFormValue' type = 'number' name = 'total_pages' value = { this.state.total_pages } onChange = { this.handleChange } placeholder = 'Total Pages'/>
+          <input className = 'bookFormValue' type = 'number' name = 'current_page' value = { this.state.current_page } onChange = { this.handleChange } placeholder = 'Current Page'/>
+          <input className = 'bookFormValue' type = 'text' name = 'current_chapter' value = { this.state.current_chapter } onChange = { this.handleChange } placeholder = 'Current Chapter'/>
         </div>
       </form>
     );

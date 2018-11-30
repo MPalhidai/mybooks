@@ -15,10 +15,16 @@ export class Routes extends React.Component {
             <BookForm />
           </div>
         } />
-        <Route path = '/books/:id' render = { props =>
+        <Route exact path = '/books/:id' render = { props =>
           <div>
             <BookView id = { props.match.params.id } />
             <CommentForm />
+          </div>
+        } />
+        <Route exact path = '/books/update/:id' render = { props =>
+          <div>
+            <BookView id = { props.match.params.id } />
+            <BookForm id = { props.match.params.id } />
           </div>
         } />
 
