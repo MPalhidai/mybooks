@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { editBook } from '../actions/index';
 import { initialState } from '../actions/constants'
 
-class BookForm extends React.Component {
+class EditForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -101,4 +101,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookForm)
+export default connect(mapStateToProps, mapDispatchToProps)(EditForm)

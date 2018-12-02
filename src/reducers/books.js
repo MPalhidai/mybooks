@@ -22,15 +22,13 @@ export const bookReducer = ( state = initialState, action ) => {
         books: state.books.filter( book => book.id === action.id )
       }
     case EDIT_BOOK:
-      const updatedBooks = state.books.map( book => {
-        if(book.id === action.book.id ){
-          book = action.book;
-        }
-        return book;
-      });
-
+      const index = state.books.findIndex(book => book.id === action.book.id)
       return {
-        books: updatedBooks
+        books: [
+          ...state.slice(0, index),
+          action.book,
+          ...state.slice(index+1)
+        ]
       }
     default:
       return state

@@ -4,6 +4,9 @@ export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const GET_BOOK = 'GET_BOOK';
 export const CREATE_COMMENT = 'CREATE_COMMENT';
 export const EDIT_BOOK = 'EDIT_BOOK';
+export const SET_BOOKS = 'SET_BOOKS';
+
+export const API_URL = 'https://mybooksapi.herokuapp.com';
 
 export const initialState = {
   books: [

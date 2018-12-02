@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Form.css';
 
 import { connect } from 'react-redux';
-import { createBook } from '../actions/index';
+import { addBook } from '../actions/async';
 import { initialState } from '../actions/constants'
 
 class BookForm extends React.Component {
@@ -10,12 +10,11 @@ class BookForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 1,
       title: '',
       category: 'Action',
       author: '',
-      total_pages: null,
-      current_page: null,
+      total_pages: '',
+      current_page: '',
       current_chapter: ''
     };
     this.handleChange = this.handleChange.bind(this);
@@ -40,14 +39,13 @@ class BookForm extends React.Component {
     // prevent an empty title
     // prevent reuse of id and duplicates
     event.preventDefault();
-    this.props.submitNewBook(this.state);
+    this.props.addBook(this.state);
     this.setState({
-      id: (this.state.id + 1), // change this to redux store state and not this component state
       title: '',
       category: 'Action',
       author: '',
-      total_pages: null,
-      current_page: null,
+      total_pages: '',
+      current_page: '',
       current_chapter: ''
     });
   }
@@ -84,12 +82,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    submitNewBook: book => {
-      dispatch(createBook(book));
-    }
-  }
+const mapDispatchToProps = {
+  addBook
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookForm)
