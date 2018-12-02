@@ -56,7 +56,7 @@ class BookForm extends React.Component {
     return (
       <form className = 'Form'>
         <p className = 'formHeader'>ADD NEW BOOK</p>
-        <div className = 'flexDiv'>
+        <div className = 'flexDiv row'>
           <input className = 'bookFormInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Book title'/>
           <select className = 'formSelector' name = 'categories' onChange = { this.handleOptions } value = { this.state.category }>
             { initialState.filters.map( (category, idx) => (

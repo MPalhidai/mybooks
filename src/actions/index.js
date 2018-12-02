@@ -36,10 +36,9 @@ export const createComment = comment => {
   }
 }
 
-export const editBook = (id, value) => {
+export const editBook = book => {
   return {
     type: EDIT_BOOK,
-    id: id,
-    current_page: value
+    book: book
   }
 }

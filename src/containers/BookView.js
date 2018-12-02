@@ -14,7 +14,11 @@ class BookView extends React.Component {
         <Book
           id = { book.id }
           title = { book.title }
+          author = { book.author }
           category = { book.category }
+          current_page = { book.current_page }
+          current_chapter = { book.current_chapter }
+          total_pages = { book.total_pages }
         />
         <div className = 'CommentList'>
           { this.props.opinions.filter( comment => comment.book_id === book.id ).map( (comment, idx) => (

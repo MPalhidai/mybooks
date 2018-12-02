@@ -23,8 +23,8 @@ export const bookReducer = ( state = initialState, action ) => {
       }
     case EDIT_BOOK:
       const updatedBooks = state.books.map( book => {
-        if(book.id === action.id ){
-          book.current_page = action.current_page;
+        if(book.id === action.book.id ){
+          book = action.book;
         }
         return book;
       });
