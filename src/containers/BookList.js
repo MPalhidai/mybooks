@@ -4,6 +4,7 @@ import { Book } from '../components/Book';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { connect } from 'react-redux';
 import { removeBook, changeFilter, editBook } from '../actions/index';
+import { getBooks } from '../actions/async';
 
 class BookList extends React.Component {
 
@@ -56,6 +57,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    getBooks,
     onRemoveBook: bookId => {
       dispatch(removeBook(bookId));
     },

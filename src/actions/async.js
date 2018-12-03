@@ -6,13 +6,16 @@ export const getBooks = () => {
     return fetch(`${API_URL}/books`)
       .then(response => response.json())
       .then(books => {
-        dispatch(setBooks(books))
+        if(books) {
+          dispatch(setBooks(books))
+        }
       })
       .catch(error => console.log(error));
   };
 }
 
 export const addBook = book => {
+  console.log(book);
   return dispatch => {
     return fetch(`${API_URL}/books`, {
       method: "POST",
@@ -21,9 +24,15 @@ export const addBook = book => {
       },
       body: JSON.stringify({ book: book })
     })
-      .then(response => response.json())
+      .then(response => {
+        response.json()
+        console.log(response);
+      })
       .then(book => {
-        dispatch(createBook(book))
+        if(book) {
+          console.log(book);
+          dispatch(createBook(book))
+        }
       })
       .catch(error => console.log(error))
   };

@@ -26,7 +26,6 @@
 }
 
 .bookCategory {
-  width: 49px;
   height: 18px;
   opacity: 0.5;
   font-family: 'Montserrat', sans-serif;
@@ -41,7 +40,6 @@
 }
 
 .bookTitle {
-  width: 197px;
   height: 29px;
   font-family: 'Roboto Slab', sans-serif;
   font-size: 22px;
@@ -56,7 +54,6 @@
 }
 
 .bookAuthor {
-  width: 107px;
   height: 19px;
   font-family: 'Roboto Slab', sans-serif;
   font-size: 14px;

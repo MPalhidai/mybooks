@@ -11,11 +11,11 @@ class BookForm extends React.Component {
     super(props);
     this.state = {
       title: '',
-      category: 'Action',
       author: '',
-      total_pages: '',
+      category: 'Action',
       current_page: '',
-      current_chapter: ''
+      current_chapter: '',
+      total_pages: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,11 +42,11 @@ class BookForm extends React.Component {
     this.props.addBook(this.state);
     this.setState({
       title: '',
-      category: 'Action',
       author: '',
-      total_pages: '',
+      category: 'Action',
       current_page: '',
-      current_chapter: ''
+      current_chapter: '',
+      total_pages: ''
     });
   }
 
