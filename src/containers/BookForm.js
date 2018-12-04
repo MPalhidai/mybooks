@@ -53,7 +53,7 @@ class BookForm extends React.Component {
   render() {
     return (
       <form className = 'Form'>
-        <p className = 'formHeader'>ADD NEW BOOK</p>
+        <p className = 'formHeader'>ADD NEW BOOK <span className = 'formHeaderSub'>* all fields required</span></p>
         <div className = 'flexDiv row'>
           <input className = 'bookFormInput' type = 'text' name = 'title' value = { this.state.title } onChange = { this.handleChange } placeholder = 'Book title'/>
           <select className = 'formSelector' name = 'categories' onChange = { this.handleOptions } value = { this.state.category }>

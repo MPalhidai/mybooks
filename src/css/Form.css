@@ -26,6 +26,11 @@
   margin-bottom: 20px;
 }
 
+.formHeaderSub {
+  font-size: 12px;
+  margin-left: 12px;
+}
+
 .flexDiv {
   display: flex;
   justify-content: space-between;

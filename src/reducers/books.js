@@ -1,5 +1,6 @@
 import {
   initialState,
+  SET_BOOKS,
   CREATE_BOOK,
   REMOVE_BOOK,
   GET_BOOK,
@@ -9,6 +10,10 @@ import {
 
 export const bookReducer = ( state = initialState, action ) => {
   switch (action.type) {
+    case SET_BOOKS:
+      return {
+        books: action.books
+       }
     case CREATE_BOOK:
       return {
         books: [ ...state.books, action.book ]

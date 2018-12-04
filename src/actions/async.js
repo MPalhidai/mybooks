@@ -24,13 +24,9 @@ export const addBook = book => {
       },
       body: JSON.stringify({ book: book })
     })
-      .then(response => {
-        response.json()
-        console.log(response);
-      })
+      .then(response => response.json())
       .then(book => {
         if(book) {
-          console.log(book);
           dispatch(createBook(book))
         }
       })
