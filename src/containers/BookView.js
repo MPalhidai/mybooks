@@ -3,49 +3,49 @@ import '../css/BookView.css';
 import { Book } from '../components/Book';
 import { Comment } from '../components/Comment';
 import { connect } from 'react-redux';
+import { getBook } from '../actions/async'
 
 class BookView extends React.Component {
   render() {
-
-    let book = this.props.inventory.filter( book => book.id === Number(this.props.id))[0];
-
     return(
       <div className = 'BookView'>
-        <Book
-          id = { book.id }
-          title = { book.title }
-          author = { book.author }
-          category = { book.category }
-          current_page = { book.current_page }
-          current_chapter = { book.current_chapter }
-          total_pages = { book.total_pages }
-        />
-        <div className = 'CommentList'>
-          { this.props.opinions.filter( comment => comment.book_id === book.id ).map( (comment, idx) => (
-            <Comment
-              key = { idx }
-              id = { comment.id }
-              rating = { comment.rating }
-              content = { comment.content }
-            />
-          ))}
-        </div>
+          <Book
+            id = { this.props.book.id }
+            title = { this.props.book.title }
+            author = { this.props.book.author }
+            category = { this.props.book.category }
+            current_page = { this.props.book.current_page }
+            current_chapter = { this.props.book.current_chapter }
+            total_pages = { this.props.book.total_pages }
+          />
+          <div className = 'CommentList'>
+            { this.props.opinions.map( (comment, idx) => (
+              <Comment
+                key = { idx }
+                id = { comment.id }
+                rating = { comment.rating }
+                content = { comment.content }
+              />
+            ))}
+          </div>
       </div>
     );
+  }
+
+  componentDidMount() {
+    this.props.getBook(this.props.id)
   }
 }
 
 const mapStateToProps = state => { // shouldn't load the whole store, only this book and related info
   return {
-    inventory: state.inventory.books,
+    book: state.inventory.book,
     opinions: state.opinions.comments // currently showing all comments on all books
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-
-  }
+const mapDispatchToProps = {
+  getBook
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookView);

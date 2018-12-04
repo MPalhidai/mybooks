@@ -2,13 +2,13 @@ import React from 'react';
 import '../css/Form.css';
 
 import { connect } from 'react-redux';
-import { createComment } from '../actions/index';
+// import { createComment } from '../actions/index';
 
 class CommentForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { id: 1, rating: null, content: '', book_id: 1, user_id: 1 };
+    this.state = { rating: '', content: '', book_id: 1, user_id: 1 };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -23,9 +23,8 @@ class CommentForm extends React.Component {
     event.preventDefault();
     this.props.submitNewComment(this.state);
     this.setState({
-      id: (this.state.id + 1), // change this to redux store state and not this component state
       content: '',
-      rating: null
+      rating: ''
     });
   }
 
@@ -51,12 +50,16 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    submitNewComment: comment => {
-      dispatch(createComment(comment));
-    }
-  }
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     submitNewComment: comment => {
+//       dispatch(createComment(comment));
+//     }
+//   }
+// }
+
+const mapDispatchToProps = {
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)

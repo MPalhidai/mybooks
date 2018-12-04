@@ -3,7 +3,7 @@ import {
   CREATE_BOOK,
   REMOVE_BOOK,
   CHANGE_FILTER,
-  GET_BOOK,
+  SET_BOOK,
   CREATE_COMMENT,
   EDIT_BOOK,
   SET_BOOKS
@@ -30,10 +30,10 @@ export const changeFilter = filter => {
   }
 }
 
-export const getBook = id => {
+export const setBook = book => {
   return {
-    type: GET_BOOK,
-    id: id
+    type: SET_BOOK,
+    book: book
   }
 }
 

@@ -1,21 +1,29 @@
 import { API_URL } from './constants';
-import { setBooks, createBook, editBook, removeBook } from './index';
+import { setBooks, setBook, createBook, editBook, removeBook } from './index';
 
 export const getBooks = () => {
   return dispatch => {
     return fetch(`${API_URL}/books`)
       .then(response => response.json())
       .then(books => {
-        if(books) {
-          dispatch(setBooks(books))
-        }
+        dispatch(setBooks(books))
+      })
+      .catch(error => console.log(error));
+  };
+}
+
+export const getBook = bookId => {
+  return dispatch => {
+    return fetch(`${API_URL}/books/${bookId}`)
+      .then(response => response.json())
+      .then(book => {
+        dispatch(setBook(book))
       })
       .catch(error => console.log(error));
   };
 }
 
 export const addBook = book => {
-  console.log(book);
   return dispatch => {
     return fetch(`${API_URL}/books`, {
       method: "POST",
@@ -26,9 +34,7 @@ export const addBook = book => {
     })
       .then(response => response.json())
       .then(book => {
-        if(book) {
-          dispatch(createBook(book))
-        }
+        dispatch(createBook(book))
       })
       .catch(error => console.log(error))
   };
@@ -60,9 +66,8 @@ export const deleteBook = bookId => {
       },
       body: JSON.stringify({ book: bookId })
     })
-      .then(response => response.json())
-      .then(book => {
-        dispatch(removeBook(book))
+      .then(response => {
+        dispatch(removeBook(bookId))
       })
       .catch(error => console.log(error))
   };

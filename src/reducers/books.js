@@ -3,7 +3,7 @@ import {
   SET_BOOKS,
   CREATE_BOOK,
   REMOVE_BOOK,
-  GET_BOOK,
+  SET_BOOK,
   EDIT_BOOK
 } from '../actions/constants';
 
@@ -22,9 +22,9 @@ export const bookReducer = ( state = initialState, action ) => {
       return {
         books: state.books.filter( book => book.id !== action.id )
       }
-    case GET_BOOK:
+    case SET_BOOK:
       return {
-        books: state.books.filter( book => book.id === action.id )
+        book: action.book
       }
     case EDIT_BOOK:
       const index = state.books.findIndex(book => book.id === action.book.id)

@@ -4,17 +4,13 @@ import { Book } from '../components/Book';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { connect } from 'react-redux';
 // import { removeBook, changeFilter, editBook } from '../actions/index';
-import { getBooks } from '../actions/async';
+import { getBooks, deleteBook } from '../actions/async';
 
 class BookList extends React.Component {
 
-  componentDidMount() {
-    this.props.getBooks()
-  }
-
   handleRemoveBook = id => {
     if(window.confirm('Are you sure you want to remove this book?')){
-      this.props.onRemoveBook(id);
+      this.props.deleteBook(id);
     }
   };
 
@@ -50,6 +46,10 @@ class BookList extends React.Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    this.props.getBooks()
+  }
 }
 
 const mapStateToProps = state => {
@@ -74,7 +74,8 @@ const mapStateToProps = state => {
 // }
 
 const mapDispatchToProps = {
-  getBooks
+  getBooks,
+  deleteBook
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

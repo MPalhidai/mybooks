@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Form.css';
 
 import { connect } from 'react-redux';
-import { editBook } from '../actions/index';
+// import { editBook } from '../actions/index';
 import { initialState } from '../actions/constants'
 
 class EditForm extends React.Component {
@@ -93,12 +93,16 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    submitEdit: book => {
-      dispatch(editBook(book));
-    }
-  }
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     submitEdit: book => {
+//       dispatch(editBook(book));
+//     }
+//   }
+// }
+
+const mapDispatchToProps = {
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditForm)
