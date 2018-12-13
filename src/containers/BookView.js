@@ -19,12 +19,14 @@ class BookView extends React.Component {
           total_pages = { this.props.book.total_pages }
         />
         <div className = 'CommentList'>
-          { this.props.opinions.map( (comment, idx) => (
+          { this.props.opinions.filter(comment => comment.book_id === this.props.book.id ).map( (comment, idx) => (
             <Comment
               key = { idx }
               id = { comment.id }
               rating = { comment.rating }
               content = { comment.content }
+              book_id = { comment.book_id }
+              user_id = { comment.user_id }
             />
           ))}
         </div>
@@ -33,14 +35,14 @@ class BookView extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getBook(this.props.id)
+    this.props.getBook(this.props.bookId)
   }
 }
 
-const mapStateToProps = state => { // shouldn't load the whole store, only this book and related info
+const mapStateToProps = state => {
   return {
     book: state.inventory.book,
-    opinions: state.opinions.comments // currently showing all comments on all books
+    opinions: state.opinions.comments
   }
 };
 

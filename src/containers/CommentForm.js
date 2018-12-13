@@ -2,13 +2,13 @@ import React from 'react';
 import '../css/Form.css';
 
 import { connect } from 'react-redux';
-// import { createComment } from '../actions/index';
+import { addComment } from '../actions/async';
 
 class CommentForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { rating: '', content: '', book_id: 1, user_id: 1 };
+    this.state = { rating: '', content: '', book_id: this.props.bookId, user_id: 1 };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,7 +21,7 @@ class CommentForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.submitNewComment(this.state);
+    this.props.addComment(this.state);
     this.setState({
       content: '',
       rating: ''
@@ -50,16 +50,8 @@ const mapStateToProps = state => {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     submitNewComment: comment => {
-//       dispatch(createComment(comment));
-//     }
-//   }
-// }
-
 const mapDispatchToProps = {
-
+  addComment
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)

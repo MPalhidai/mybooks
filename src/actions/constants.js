@@ -22,6 +22,6 @@ export const initialState = {
   ],
   book: {},
   comments: [
-    {id: 1, rating: 77, content: 'This books is great!!!', book_id: 1}
+    {id: 1, rating: 77, content: 'This books is great!!!', book_id: 2, user_id: 1}
   ]
 }

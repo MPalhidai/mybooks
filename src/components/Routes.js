@@ -16,20 +16,18 @@ export class Routes extends React.Component {
             <BookForm />
           </div>
         } />
-        <Route exact path = '/books/:id' render = { props =>
+        <Route path = '/books/:id' render = { props =>
           <div>
-            <BookView id = { props.match.params.id } />
-            <CommentForm />
+            <BookView bookId = { props.match.params.id } />
+            <CommentForm bookId = { props.match.params.id } />
           </div>
         } />
-        <Route exact path = '/books/update/:id' render = { props =>
+        <Route path = '/books/update/:id' render = { props =>
           <div>
-            <BookView id = { props.match.params.id } />
-            <EditForm id = { props.match.params.id } />
+            <BookView bookId = { props.match.params.id } />
+            <EditForm bookId = { props.match.params.id } />
           </div>
         } />
-
-
       </Switch>
     );
   }

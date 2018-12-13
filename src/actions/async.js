@@ -1,5 +1,5 @@
 import { API_URL } from './constants';
-import { setBooks, setBook, createBook, editBook, removeBook } from './index';
+import { setBooks, setBook, createBook, editBook, removeBook, createComment } from './index';
 
 export const getBooks = () => {
   return dispatch => {
@@ -68,6 +68,23 @@ export const deleteBook = bookId => {
     })
       .then(response => {
         dispatch(removeBook(bookId))
+      })
+      .catch(error => console.log(error))
+  };
+}
+
+export const addComment = comment => {
+  return dispatch => {
+    return fetch(`${API_URL}/comments`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ comment: comment })
+    })
+      .then(response => response.json())
+      .then(comment => {
+        dispatch(createComment(comment))
       })
       .catch(error => console.log(error))
   };
