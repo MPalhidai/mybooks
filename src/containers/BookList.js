@@ -17,7 +17,7 @@ class BookList extends React.Component {
   handleEditProgress = id => {
     let value = prompt('What page are you on now?');
     if(value) {
-      this.props.onEditProgress(id, value);
+      this.props.updateProgress(id, value);
     }
   };
 

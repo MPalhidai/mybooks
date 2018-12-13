@@ -1,9 +1,14 @@
 import React from 'react';
 import '../css/Book.css';
 import { Link } from 'react-router-dom';
+import CircularProgressbar from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 export class Book extends React.Component {
+
   render() {
+    let percentage = Math.floor(this.props.current_page / this.props.total_pages * 100);
+
     return (
       <div className = 'bookCard' id = { this.props.id }>
         <div className = 'bookCardLeft'>
@@ -19,11 +24,15 @@ export class Book extends React.Component {
           </p>
         </div>
         <div className = 'bookCardMiddle'>
-          <div className = 'bookProgressBar'>
-
-          </div>
+          <CircularProgressbar
+            percentage = { percentage }
+            className = 'bookProgressBar'
+            styles={{
+              path: { stroke: "#379cf6" }
+            }}
+          />
           <div className = 'bookCardMiddleRight'>
-            <p className = 'bookProgressNumber'>{ Math.floor(this.props.current_page / this.props.total_pages * 100) }%</p>
+            <p className = 'bookProgressNumber'>{ percentage }%</p>
             <p className = 'bookProgressComplete'>Completed</p>
           </div>
         </div>

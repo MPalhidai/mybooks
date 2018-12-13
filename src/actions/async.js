@@ -40,9 +40,9 @@ export const addBook = book => {
   };
 }
 
-export const updateBook = (bookId, book) => {
+export const updateBook = book => {
   return dispatch => {
-    return fetch(`${API_URL}/books/${bookId}`, {
+    return fetch(`${API_URL}/books/${book.id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json'

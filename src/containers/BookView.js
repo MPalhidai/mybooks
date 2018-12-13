@@ -9,25 +9,25 @@ class BookView extends React.Component {
   render() {
     return(
       <div className = 'BookView'>
-          <Book
-            id = { this.props.book.id }
-            title = { this.props.book.title }
-            author = { this.props.book.author }
-            category = { this.props.book.category }
-            current_page = { this.props.book.current_page }
-            current_chapter = { this.props.book.current_chapter }
-            total_pages = { this.props.book.total_pages }
-          />
-          <div className = 'CommentList'>
-            { this.props.opinions.map( (comment, idx) => (
-              <Comment
-                key = { idx }
-                id = { comment.id }
-                rating = { comment.rating }
-                content = { comment.content }
-              />
-            ))}
-          </div>
+        <Book
+          id = { this.props.book.id }
+          title = { this.props.book.title }
+          author = { this.props.book.author }
+          category = { this.props.book.category }
+          current_page = { this.props.book.current_page }
+          current_chapter = { this.props.book.current_chapter }
+          total_pages = { this.props.book.total_pages }
+        />
+        <div className = 'CommentList'>
+          { this.props.opinions.map( (comment, idx) => (
+            <Comment
+              key = { idx }
+              id = { comment.id }
+              rating = { comment.rating }
+              content = { comment.content }
+            />
+          ))}
+        </div>
       </div>
     );
   }

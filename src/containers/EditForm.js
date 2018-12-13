@@ -2,8 +2,8 @@ import React from 'react';
 import '../css/Form.css';
 
 import { connect } from 'react-redux';
-// import { editBook } from '../actions/index';
-import { initialState } from '../actions/constants'
+import { updateBook } from '../actions/async';
+import { initialState } from '../actions/constants';
 
 class EditForm extends React.Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class EditForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.submitEdit(this.state);
+    this.props.updateBook(this.state);
   }
 
   render() {
@@ -93,16 +93,8 @@ const mapStateToProps = state => {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     submitEdit: book => {
-//       dispatch(editBook(book));
-//     }
-//   }
-// }
-
 const mapDispatchToProps = {
-
+  updateBook
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditForm)

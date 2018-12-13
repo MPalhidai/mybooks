@@ -96,12 +96,7 @@
 }
 
 .bookProgressBar {
-  position: relative;
-  width: 68px;
   height: 68px;
-  border: 5px solid #e8e8e8;
-  border-radius: 100%;
-  background: #ffffff;
 }
 
 .bookProgressNumber {
