@@ -1,6 +1,7 @@
 import {
   initialState,
-  CREATE_COMMENT
+  CREATE_COMMENT,
+  SET_COMMENTS
 } from '../actions/constants';
 
 
@@ -10,6 +11,10 @@ export const commentReducer = ( state = initialState, action ) => {
       return {
         comments: [ action.comment, ...state.comments ]
        }
+    case SET_COMMENTS:
+      return {
+        comments: action.comments
+      }
     default:
       return state
   }

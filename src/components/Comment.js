@@ -10,7 +10,7 @@ export class Comment extends React.Component {
       <div className = 'commentCard' id = { this.props.id }>
         <div className = 'flexDiv'>
           <div className = 'commentCardLeft'>
-            <p className = 'commentUser'>User: { this.props.user }</p>
+            <p className = 'commentUser'>{ this.props.user }</p>
           </div>
           <div className = 'commentCardRight'>
             <p className = 'commentRating'>Rating: { this.props.rating }</p>

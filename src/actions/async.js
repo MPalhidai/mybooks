@@ -1,5 +1,5 @@
 import { API_URL } from './constants';
-import { setBooks, setBook, createBook, editBook, removeBook, createComment } from './index';
+import { setBooks, setBook, setComments, createBook, editBook, removeBook, createComment } from './index';
 
 export const getBooks = () => {
   return dispatch => {
@@ -18,6 +18,17 @@ export const getBook = bookId => {
       .then(response => response.json())
       .then(book => {
         dispatch(setBook(book))
+      })
+      .catch(error => console.log(error));
+  };
+}
+
+export const getComments = bookId => {
+  return dispatch => {
+    return fetch(`${API_URL}/books/${bookId}/comments`)
+      .then(response => response.json())
+      .then(comments => {
+        dispatch(setComments(comments))
       })
       .catch(error => console.log(error));
   };

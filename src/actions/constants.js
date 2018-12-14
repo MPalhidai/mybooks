@@ -4,6 +4,7 @@ export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const SET_BOOKS = 'SET_BOOKS';
 export const SET_BOOK = 'SET_BOOK';
 export const CREATE_COMMENT = 'CREATE_COMMENT';
+export const SET_COMMENTS = 'SET_COMMENTS';
 export const EDIT_BOOK = 'EDIT_BOOK';
 
 
@@ -21,7 +22,5 @@ export const initialState = {
     'Sci-Fi'
   ],
   book: {},
-  comments: [
-    {id: 1, rating: 77, content: 'This books is great!!!', book_id: 2, user_id: 1}
-  ]
+  comments: []
 }

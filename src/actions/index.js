@@ -6,7 +6,8 @@ import {
   SET_BOOK,
   CREATE_COMMENT,
   EDIT_BOOK,
-  SET_BOOKS
+  SET_BOOKS,
+  SET_COMMENTS
 } from './constants';
 
 export const createBook = book => {
@@ -55,5 +56,12 @@ export const setBooks = books => {
   return {
     type: SET_BOOKS,
     books: books
+  }
+}
+
+export const setComments = comments => {
+  return {
+    type: SET_COMMENTS,
+    comments: comments
   }
 }

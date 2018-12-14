@@ -3,7 +3,7 @@ import '../css/BookView.css';
 import { Book } from '../components/Book';
 import { Comment } from '../components/Comment';
 import { connect } from 'react-redux';
-import { getBook } from '../actions/async'
+import { getBook, getComments } from '../actions/async'
 
 class BookView extends React.Component {
   render() {
@@ -19,14 +19,14 @@ class BookView extends React.Component {
           total_pages = { this.props.book.total_pages }
         />
         <div className = 'CommentList'>
-          { this.props.opinions.filter(comment => comment.book_id === this.props.book.id ).map( (comment, idx) => (
+          { this.props.opinions.map( (comment, idx) => (
             <Comment
               key = { idx }
               id = { comment.id }
               rating = { comment.rating }
               content = { comment.content }
               book_id = { comment.book_id }
-              user_id = { comment.user_id }
+              user = { comment.user }
             />
           ))}
         </div>
@@ -36,6 +36,7 @@ class BookView extends React.Component {
 
   componentDidMount() {
     this.props.getBook(this.props.bookId)
+    this.props.getComments(this.props.bookId)
   }
 }
 
@@ -47,7 +48,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  getBook
+  getBook,
+  getComments
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookView);

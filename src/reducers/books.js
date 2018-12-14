@@ -24,8 +24,7 @@ export const bookReducer = ( state = initialState, action ) => {
       }
     case SET_BOOK:
       return {
-        book: action.book,
-        comments: action.book.comments
+        book: action.book
       }
     case EDIT_BOOK:
       const index = state.books.findIndex(book => book.id === action.book.id)
