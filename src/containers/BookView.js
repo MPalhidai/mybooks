@@ -42,8 +42,8 @@ class BookView extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    book: state.inventory.book,
-    opinions: state.opinions.comments
+    book: state.activeBook,
+    opinions: state.opinions
   }
 };
 

@@ -89,7 +89,7 @@ class EditForm extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    inventory: state.inventory.books
+    inventory: state.inventory
   }
 }
 

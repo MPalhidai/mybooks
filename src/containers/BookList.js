@@ -3,7 +3,6 @@ import '../css/BookList.css';
 import { Book } from '../components/Book';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { connect } from 'react-redux';
-// import { removeBook, changeFilter, editBook } from '../actions/index';
 import { getBooks, deleteBook } from '../actions/async';
 
 class BookList extends React.Component {
@@ -54,24 +53,10 @@ class BookList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    inventory: state.inventory.books,
-    categories: state.categories.filters
+    inventory: state.inventory,
+    categories: state.categories
   }
 };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onRemoveBook: bookId => {
-//       dispatch(removeBook(bookId));
-//     },
-//     onFilterChange: filterCategory => {
-//       dispatch(changeFilter(filterCategory));
-//     },
-//     onEditProgress: (id, value) => {
-//       dispatch(editBook(id, value));
-//     }
-//   }
-// }
 
 const mapDispatchToProps = {
   getBooks,

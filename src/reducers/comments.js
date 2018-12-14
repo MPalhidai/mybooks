@@ -5,16 +5,12 @@ import {
 } from '../actions/constants';
 
 
-export const commentReducer = ( state = initialState, action ) => {
+export const commentReducer = ( state = initialState.comments, action ) => {
   switch (action.type) {
     case CREATE_COMMENT:
-      return {
-        comments: [ action.comment, ...state.comments ]
-       }
+      return [ action.comment, ...state.comments ]
     case SET_COMMENTS:
-      return {
-        comments: action.comments
-      }
+      return action.comments
     default:
       return state
   }
