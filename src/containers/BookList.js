@@ -3,7 +3,7 @@ import '../css/BookList.css';
 import { Book } from '../components/Book';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { connect } from 'react-redux';
-import { getBooks, deleteBook } from '../actions/async';
+import { getBooks, deleteBook, dispatchFilter } from '../actions/async';
 
 class BookList extends React.Component {
 
@@ -21,7 +21,7 @@ class BookList extends React.Component {
   };
 
   handleFilterChange = filter => {
-    this.props.onFilterChange(filter);
+    this.props.dispatchFilter(filter);
   };
 
   render() {
@@ -60,7 +60,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   getBooks,
-  deleteBook
+  deleteBook,
+  dispatchFilter
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

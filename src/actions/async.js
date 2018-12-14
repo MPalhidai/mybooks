@@ -1,5 +1,5 @@
 import { API_URL } from './constants';
-import { setBooks, setBook, setComments, createBook, editBook, removeBook, createComment } from './index';
+import { setBooks, setBook, setComments, createBook, editBook, removeBook, createComment, changeFilter } from './index';
 
 export const getBooks = () => {
   return dispatch => {
@@ -99,4 +99,10 @@ export const addComment = comment => {
       })
       .catch(error => console.log(error))
   };
+}
+
+export const dispatchFilter = filter => {
+  return dispatch => {
+    return dispatch(changeFilter(filter))
+  }
 }
