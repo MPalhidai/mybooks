@@ -3,7 +3,8 @@
 - responsive css for mobile use
 - add users so each user can have their own books and reading progress
 - list all categories, add, and remove on category page
--   
+- add error checking and limits to entries
+- add tests
 
 ## Available Scripts
 
