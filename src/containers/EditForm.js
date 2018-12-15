@@ -4,13 +4,12 @@ import '../css/Form.css';
 import { connect } from 'react-redux';
 import { updateBook } from '../actions/async';
 import { initialState } from '../actions/constants';
+import { changeBook } from '../actions/index';
 
 class EditForm extends React.Component {
   constructor(props) {
     super(props);
-
-    let book = this.props.inventory.filter( book => book.id === Number(this.props.id))[0];
-
+    let book = this.props.book;
     this.state = {
       id: book.id,
       title: book.title,
@@ -40,10 +39,10 @@ class EditForm extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.updateBook(this.state);
+    this.props.changeBook(this.state);
   }
 
   render() {
-
     return (
       <form className = 'Form'>
         <p className = 'formHeader'>EDIT THIS BOOK</p>
@@ -89,12 +88,14 @@ class EditForm extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    inventory: state.inventory
+    inventory: state.inventory,
+    book: state.activeBook
   }
 }
 
 const mapDispatchToProps = {
-  updateBook
+  updateBook,
+  changeBook
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditForm)

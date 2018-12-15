@@ -3,20 +3,40 @@ import '../css/BookView.css';
 import { Book } from '../components/Book';
 import { Comment } from '../components/Comment';
 import { connect } from 'react-redux';
-import { getBook, getComments } from '../actions/async'
+import { getBook, getComments, deleteBook, updateBook } from '../actions/async';
+import { changeBook } from '../actions/index';
 
 class BookView extends React.Component {
+
+  handleRemoveBook = id => {
+    if(window.confirm('Are you sure you want to remove this book?')){
+      this.props.deleteBook(id);
+    }
+  };
+
+  handleEditProgress = book => {
+    let value = prompt('What page are you on now?');
+    if(value) {
+      book.current_page = value;
+      this.props.updateBook(book);
+      this.props.changeBook(book);
+    }
+  };
+
   render() {
+    let book = this.props.book;
     return(
       <div className = 'BookView'>
         <Book
-          id = { this.props.book.id }
-          title = { this.props.book.title }
-          author = { this.props.book.author }
-          category = { this.props.book.category }
-          current_page = { this.props.book.current_page }
-          current_chapter = { this.props.book.current_chapter }
-          total_pages = { this.props.book.total_pages }
+          id = { book.id }
+          title = { book.title }
+          author = { book.author }
+          category = { book.category }
+          current_page = { book.current_page }
+          current_chapter = { book.current_chapter }
+          total_pages = { book.total_pages }
+          removeBtn = { this.handleRemoveBook }
+          progressBtn = { this.handleEditProgress }
         />
         <div className = 'CommentList'>
           { this.props.opinions.map( (comment, idx) => (
@@ -49,7 +69,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   getBook,
-  getComments
+  getComments,
+  deleteBook,
+  updateBook,
+  changeBook
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookView);

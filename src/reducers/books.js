@@ -12,12 +12,12 @@ export const bookReducer = ( state = initialState.books, action ) => {
     case SET_BOOKS:
       return action.books
     case CREATE_BOOK:
-      return [ ...state.books, action.book ]
+      return [ ...state, action.book ]
     case REMOVE_BOOK:
-      return state.books.filter( book => book.id !== action.id )
+      return state.filter( book => book.id !== action.id )
     case EDIT_BOOK:
-      const index = state.books.findIndex(book => book.id === action.book.id)
-      return [...state.slice(0, index), action.book, ...state.slice(index+1)]
+      const index = state.findIndex(book => book.id === action.book.id)
+      return [ ...state.slice(0, index), action.book, ...state.slice(index+1) ]
     default:
       return state
   }

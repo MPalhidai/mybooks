@@ -3,7 +3,7 @@ import '../css/BookList.css';
 import { Book } from '../components/Book';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { connect } from 'react-redux';
-import { getBooks, deleteBook, dispatchFilter } from '../actions/async';
+import { getBooks, deleteBook, dispatchFilter, updateBook } from '../actions/async';
 
 class BookList extends React.Component {
 
@@ -13,10 +13,11 @@ class BookList extends React.Component {
     }
   };
 
-  handleEditProgress = id => {
+  handleEditProgress = book => {
     let value = prompt('What page are you on now?');
     if(value) {
-      this.props.updateProgress(id, value);
+      book.current_page = value;
+      this.props.updateBook(book);
     }
   };
 
@@ -61,7 +62,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   getBooks,
   deleteBook,
-  dispatchFilter
+  dispatchFilter,
+  updateBook
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

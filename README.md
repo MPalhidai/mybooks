@@ -1,6 +1,9 @@
 # In Dev Features
 
 - responsive css for mobile use
+- add users so each user can have their own books and reading progress
+- list all categories, add, and remove on category page
+-   
 
 ## Available Scripts
 
