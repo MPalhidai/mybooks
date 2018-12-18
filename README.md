@@ -5,6 +5,11 @@
 - list all categories, add, and remove on category page
 - add error checking and limits to entries
 - add tests
+- deployment routes needs to run on michaelpalhidai.com/mybooks/ instead of /
+- restructure containers to pass book component without repeated code
+- paginate lists
+- make sure get book mounts when going to bookView page and edit form
+- on api whitelist cors domains
 
 ## Available Scripts
 
