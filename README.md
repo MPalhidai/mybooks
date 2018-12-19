@@ -1,4 +1,10 @@
-# In Dev Features
+# MyBooks
+
+MyBooks is a web application to track what books you are reading and what page you are currently on. This is the repository for the front end app, but the backend can be found at [MyBooksAPI](https://github.com/MPalhidai/mybooksAPI)
+
+* [MyBooks](https://www.michaelpalhidai.com/mybooks/)
+
+## In Dev Features
 
 - responsive css for mobile use
 - add users so each user can have their own books and reading progress
