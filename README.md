@@ -1,8 +1,6 @@
-# MyBooks
+# [MyBooks](https://www.michaelpalhidai.com/mybooks/)
 
 MyBooks is a web application to track what books you are reading and what page you are currently on. This is the repository for the front end app, but the backend can be found at [MyBooksAPI](https://github.com/MPalhidai/mybooksAPI)
-
-* [MyBooks](https://www.michaelpalhidai.com/mybooks/)
 
 ![screen shot 2018-12-19 at 6 40 31 pm](https://user-images.githubusercontent.com/25018247/50260794-671af400-03be-11e9-9efd-9670684f9c3c.png)
 
