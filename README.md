@@ -4,6 +4,8 @@ MyBooks is a web application to track what books you are reading and what page y
 
 * [MyBooks](https://www.michaelpalhidai.com/mybooks/)
 
+![screen shot 2018-12-19 at 6 40 31 pm](https://user-images.githubusercontent.com/25018247/50260794-671af400-03be-11e9-9efd-9670684f9c3c.png)
+
 ## In Dev Features
 
 - responsive css for mobile use
