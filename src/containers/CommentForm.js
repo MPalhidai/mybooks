@@ -53,14 +53,10 @@ class CommentForm extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
 
-  }
-}
 
 const mapDispatchToProps = {
   addComment
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)
+export default connect(null, mapDispatchToProps)(CommentForm)

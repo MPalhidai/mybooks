@@ -15,6 +15,7 @@ MyBooks is a web application to track what books you are reading and what page y
 - paginate lists
 - make sure get book mounts when going to bookView page and edit form
 - on api whitelist cors domains
+- if on bookview, delete should redirect to root
 
 ## Available Scripts
 
