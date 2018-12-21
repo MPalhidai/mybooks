@@ -13,9 +13,9 @@ export class Nav extends React.Component {
       <div className = 'Nav'>
         <div className = 'header'>
           <div className = 'headerLinks flexDiv'>
-            <Link to = '/' className = 'logoLink'>Bookstore CMS</Link>
-            <Link to = '/' className = 'booksLink'>Books</Link>
-            <Link to = '/' className = 'categoryLink'>Categories</Link>
+            <Link to = '/mybooks/' className = 'logoLink'>Bookstore CMS</Link>
+            <Link to = '/mybooks/' className = 'booksLink'>Books</Link>
+            <Link to = '/mybooks/' className = 'categoryLink'>Categories</Link>
           </div>
           <div className = 'userCircle'>
             <FontAwesomeIcon icon = 'user' />
