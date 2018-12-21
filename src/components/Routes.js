@@ -10,7 +10,7 @@ export class Routes extends React.Component {
   render() {
     return(
       <Switch>
-        <Route exact path = '/mybooks/' render = { props =>
+        <Route exact path = '/mybooks' render = { props =>
           <div>
             <BookList />
             <BookForm />
