@@ -13,7 +13,7 @@ export class Nav extends React.Component {
       <div className = 'Nav'>
         <div className = 'header'>
           <div className = 'headerLinks flexDiv'>
-            <Link to = '/mybooks' className = 'logoLink'>Bookstore CMS</Link>
+            <Link to = '/mybooks' className = 'logoLink'>MyBooks</Link>
             <Link to = '/mybooks' className = 'booksLink'>Books</Link>
             <Link to = '/mybooks' className = 'categoryLink'>Categories</Link>
           </div>
