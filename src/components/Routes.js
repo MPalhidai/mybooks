@@ -7,11 +7,13 @@ import BookView from '../containers/BookView';
 import CommentForm from '../containers/CommentForm';
 import CategoryList from '../containers/CategoryList';
 import CategoryForm from '../containers/CategoryForm';
+import LoginForm from '../containers/LoginForm';
 
 export class Routes extends React.Component {
   render() {
     return(
       <Switch>
+        <Route path="/login" component = { LoginForm } />
         <Route exact path = '/mybooks' render = { props =>
           <div>
             <BookList />

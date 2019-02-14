@@ -10,7 +10,8 @@ import {
   SET_BOOKS,
   SET_COMMENTS,
   SET_CATEGORIES,
-  CREATE_CATEGORY
+  CREATE_CATEGORY,
+  CURRENT_USER
 } from './constants';
 
 export const createBook = book => {
@@ -87,5 +88,12 @@ export const createCategory = category => {
   return {
     type: CREATE_CATEGORY,
     category: category
+  }
+}
+
+export const currentUser = user => {
+  return {
+    type: CURRENT_USER,
+    user: user
   }
 }
