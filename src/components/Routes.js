@@ -5,8 +5,8 @@ import BookForm from '../containers/BookForm';
 import EditForm from '../containers/EditForm';
 import BookView from '../containers/BookView';
 import CommentForm from '../containers/CommentForm';
-import CategoryList from '../containers/CommentForm';
-import CategoryForm from '../containers/CommentForm';
+import CategoryList from '../containers/CategoryList';
+import CategoryForm from '../containers/CategoryForm';
 
 export class Routes extends React.Component {
   render() {

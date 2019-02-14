@@ -7,7 +7,7 @@ export class Category extends React.Component {
       <div className = 'commentCard'>
         <div className = 'flexDiv'>
           <div className = 'commentCardLeft'>
-            <p className = 'commentUser'>{ this.props.type }</p>
+            <p className = 'commentUser'>{ this.props.category }</p>
           </div>
           <div className = 'commentCardRight'>
             <p className = 'commentRating'>Total: { this.props.total }</p>

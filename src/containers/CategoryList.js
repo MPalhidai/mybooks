@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/CategoryList.css';
-import { Category } from '../components/Book';
+import { Category } from '../components/Category';
 import { connect } from 'react-redux';
 import { getCategories } from '../actions/async';
 
@@ -12,7 +12,7 @@ class CategoryList extends React.Component {
         { this.props.categories.map( (category, idx) => (
           <Category
             key = { idx }
-            category = { category.category }
+            category = { category }
             total = { category.total }
           />
         ))}
