@@ -1,5 +1,5 @@
 import { API_URL } from './constants';
-import { setBooks, setBook, setComments, createBook, editBook, removeBook, createComment, changeFilter } from './index';
+import { setBooks, setBook, setComments, setCategories, createBook, editBook, removeBook, createComment, createCategory, changeFilter } from './index';
 
 export const getBooks = () => {
   return dispatch => {
@@ -29,6 +29,17 @@ export const getComments = bookId => {
       .then(response => response.json())
       .then(comments => {
         dispatch(setComments(comments))
+      })
+      .catch(error => console.log(error));
+  };
+}
+
+export const getCategories = () => {
+  return dispatch => {
+    return fetch(`${API_URL}/categories`)
+      .then(response => response.json())
+      .then(categories => {
+        dispatch(setCategories(categories))
       })
       .catch(error => console.log(error));
   };
@@ -96,6 +107,23 @@ export const addComment = comment => {
       .then(response => response.json())
       .then(comment => {
         dispatch(createComment(comment))
+      })
+      .catch(error => console.log(error))
+  };
+}
+
+export const addCategory = category => {
+  return dispatch => {
+    return fetch(`${API_URL}/categories`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ category: category })
+    })
+      .then(response => response.json())
+      .then(category => {
+        dispatch(createCategory(category))
       })
       .catch(error => console.log(error))
   };

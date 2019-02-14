@@ -5,6 +5,8 @@ import BookForm from '../containers/BookForm';
 import EditForm from '../containers/EditForm';
 import BookView from '../containers/BookView';
 import CommentForm from '../containers/CommentForm';
+import CategoryList from '../containers/CommentForm';
+import CategoryForm from '../containers/CommentForm';
 
 export class Routes extends React.Component {
   render() {
@@ -26,6 +28,12 @@ export class Routes extends React.Component {
           <div>
             <BookView bookId = { props.match.params.id } />
             <EditForm bookId = { props.match.params.id } />
+          </div>
+        } />
+        <Route exact path = '/categories' render = { props =>
+          <div>
+            <CategoryList />
+            <CategoryForm />
           </div>
         } />
       </Switch>

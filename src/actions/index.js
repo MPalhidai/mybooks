@@ -8,7 +8,9 @@ import {
   CREATE_COMMENT,
   EDIT_BOOK,
   SET_BOOKS,
-  SET_COMMENTS
+  SET_COMMENTS,
+  SET_CATEGORIES,
+  CREATE_CATEGORY
 } from './constants';
 
 export const createBook = book => {
@@ -71,5 +73,19 @@ export const setComments = comments => {
   return {
     type: SET_COMMENTS,
     comments: comments
+  }
+}
+
+export const setCategories = categories => {
+  return {
+    type: SET_CATEGORIES,
+    categories: categories
+  }
+}
+
+export const createCategory = category => {
+  return {
+    type: CREATE_CATEGORY,
+    category: category
   }
 }
