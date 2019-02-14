@@ -4,7 +4,6 @@ import {
   SET_COMMENTS
 } from '../actions/constants';
 
-
 export const commentReducer = ( state = initialState.comments, action ) => {
   switch (action.type) {
     case CREATE_COMMENT:
