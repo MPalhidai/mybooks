@@ -1,8 +1,9 @@
 import React from 'react';
+import '../css/Form.css';
 import { connect } from 'react-redux';
-import { submitLogin } from '../actions/async';
+import { signInUser } from '../redux-token-auth-config';
 
-class LoginForm extends React.Component {
+class SignInPage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -22,9 +23,10 @@ class LoginForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.submitLogin(this.state);
+    this.props.signInUser(this.state).then().catch();
     this.setState({
-      category: ''
+      email: '',
+      password: ''
     });
   }
 
@@ -43,7 +45,7 @@ class LoginForm extends React.Component {
 }
 
 const mapDispatchToProps = {
-  submitLogin
+  signInUser
 }
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default connect(null, mapDispatchToProps)(SignInPage);

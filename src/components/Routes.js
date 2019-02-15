@@ -8,8 +8,8 @@ import CommentForm from '../containers/CommentForm';
 import CategoryList from '../containers/CategoryList';
 import CategoryForm from '../containers/CategoryForm';
 
-import HomePage from './components/HomePage'
-import SignInPage from './components/SignInPage'
+import SignInPage from './SignInPage'
+import RegisterPage from './RegisterPage'
 import { generateRequireSignInWrapper } from 'redux-token-auth'
 
 // build a HomePage and change login form to signin
@@ -24,12 +24,13 @@ export class Routes extends React.Component {
     return(
       <Switch>
         <Route path="/signin" component = { SignInPage } />
-        <Route exact path = '/mybooks' render = { requireSignIn( props =>
+        <Route path="/signup" component = { RegisterPage } />
+        <Route exact path = '/mybooks' render = { props =>
           <div>
             <BookList />
             <BookForm />
           </div>
-        ) } />
+        } />
         <Route exact path = '/books/:id' render = { requireSignIn( props =>
           <div>
             <BookView bookId = { props.match.params.id } />

@@ -9,8 +9,7 @@ import {
   removeBook,
   createComment,
   createCategory,
-  changeFilter,
-  currentUser
+  changeFilter
 } from './index';
 
 export const getBooks = () => {
@@ -136,23 +135,6 @@ export const addCategory = category => {
       .then(response => response.json())
       .then(category => {
         dispatch(createCategory(category))
-      })
-      .catch(error => console.log(error))
-  };
-}
-
-export const submitLogin = user => {
-  return dispatch => {
-    return fetch(`${API_URL}/auth/sign_in`, {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ user: user })
-    })
-      .then(response => response.json())
-      .then(user => {
-        dispatch(currentUser(user))
       })
       .catch(error => console.log(error))
   };
