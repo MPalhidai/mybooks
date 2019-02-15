@@ -4,8 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from './components/App';
 import { Provider } from 'react-redux';
 import { store } from './store';
-
 import * as serviceWorker from './serviceWorker';
+
+import { verifyCredentials } from './redux-token-auth-config'
+verifyCredentials(store)
 
 ReactDOM.render(
   <Provider store = { store }>
