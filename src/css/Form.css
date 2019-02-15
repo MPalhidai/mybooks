@@ -30,7 +30,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
+  height: calc(100vh - 95px - 5rem);
+}
+
+.userForm {
+  max-width: 400px;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
 }
 
 .userInput {

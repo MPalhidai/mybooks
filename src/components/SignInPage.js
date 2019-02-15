@@ -33,12 +33,18 @@ class SignInPage extends React.Component {
   render () {
     return (
       <div>
-        <h2>Sign in</h2>
-        <form onSubmit={this.handleLogin} >
-          <input name="email" value = { this.state.email } onChange = { this.handleChange } />
-          <input name="password" type="password" value = { this.state.password } onChange = { this.handleChange } />
-          <input type="submit" onClick = { this.handleSubmit } />
-        </form>
+        <div className = 'singlePage'>
+          <form className = 'userForm' >
+            <p className = 'formHeader'>Sign In</p>
+            <input name="email" className = 'userInput' type="email" value = { this.state.email } onChange = { this.handleChange } placeholder = 'Email' />
+            <input name="password" className = 'userInput' type="password" value = { this.state.password } onChange = { this.handleChange } placeholder = 'Password' />
+            <div className = 'centered' >
+              <button className = 'formBtn' onClick = { this.handleSubmit }>
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     )
   }
