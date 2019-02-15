@@ -10,7 +10,8 @@ class RegisterPage extends React.Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +29,8 @@ class RegisterPage extends React.Component {
     this.setState({
       name: '',
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: ''
     });
   }
 
@@ -41,6 +43,7 @@ class RegisterPage extends React.Component {
             <input name="name" className = 'userInput' type="text" value = { this.state.name } onChange = { this.handleChange } placeholder = 'Name' />
             <input name="email" className = 'userInput' type="email" value = { this.state.email } onChange = { this.handleChange } placeholder = 'Email' />
             <input name="password" className = 'userInput' type="password" value = { this.state.password } onChange = { this.handleChange } placeholder = 'Password' />
+            <input name="confirmPassword" className = 'userInput' type="password" value = { this.state.confirmPassword } onChange = { this.handleChange } placeholder = 'Password Confirmation' />
             <button className = 'formBtn' onClick = { this.handleSubmit }>
               Submit
             </button>
